@@ -61,14 +61,14 @@ async function fetchEvent(fromBlock, save) {
                         const c = new Date(current * 1000)
                         const e = new Date(item.returnValues.expires * 1000)
                         const t = new Date(c.getFullYear(), e.getMonth(), e.getDate(), e.getHours(), e.getMinutes(), e.getSeconds())
-                        text = text + (t.getTime() / 1000) + '|'
-                        text = text + item.blockNumber + '|'
-                        text = text + item.transactionHash + '|'
-                        text = text + item.transactionIndex + '|'
-                        text = text + item.returnValues.name + '|'
-                        text = text + item.returnValues.label + '|'
-                        text = text + item.returnValues.owner + '|'
-                        text = text + item.returnValues.cost + '|'
+                        text = text + (t.getTime() / 1000) + '//|//'
+                        text = text + item.blockNumber + '//|//'
+                        text = text + item.transactionHash + '//|//'
+                        text = text + item.transactionIndex + '//|//'
+                        text = text + item.returnValues.name + '//|//'
+                        text = text + item.returnValues.label + '//|//'
+                        text = text + item.returnValues.owner + '//|//'
+                        text = text + item.returnValues.cost + '//|//'
                         text = text + item.returnValues.expires
                         text = text + "\n"
                     })
@@ -115,7 +115,7 @@ async function monitorBlock(saveLocation) {
 }
 
 monitorBlock(
-    // `data_fixed/ens_15.txt`
+    // `ens_15.txt`
 ).then(() => {
     console.log("Done");
 })
